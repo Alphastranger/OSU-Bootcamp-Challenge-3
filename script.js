@@ -1,12 +1,12 @@
 // Assignment code here
 // IDK HOW TO START THIIIIS
 let parameters = ["capital letter", " lowercase letter", " numeric", " special character"];
-parameters [1] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-parameters [2] = "abcdefghijklmnopqrstuvwxyz";
-parameters [3] = "0123456789";
-parameters [4] = "!@#$%^&*()"
+parameters [1] = "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z";
+parameters [2] = "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",'p','q','r','s','t','u','v','w','x','y',"z";
+parameters [3] = "0",'1','2','3','4','5','6','7','8',"9";
+parameters [4] = "!",'@','#','$','%','^','&','*';
 let chars = "";
-var pass=document.getElementById("#password");
+// var pass=document.getElementById("#password");
 var pass = "";
 
 function generatePassword() {
@@ -40,12 +40,12 @@ function generatePassword() {
     window.alert("Please input a proper length");
   }
   else {
-    pass += chars.substring(Math.random() * passwordLength);
+    pass += chars.substring(Math.floor(Math.random() * passwordLength));
     }
 
-  // for (var i = 8; i <=128; i++) {
-  //   pass += chars.substring(Math.floor(Math.random() * pass.length));
-  // }
+  for (var i = 0; i <=passwordLength; i++) {
+    pass += chars.substring(Math.floor(Math.random() * pass.length));
+  }
   
   return pass;
 }
