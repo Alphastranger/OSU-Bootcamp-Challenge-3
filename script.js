@@ -1,16 +1,16 @@
 // Assignment code here
 // IDK HOW TO START THIIIIS
 let parameters = ["capital letter", " lowercase letter", " numeric", " special character"];
-let chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-let pass = "";
+let chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%&ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var pass=document.getElementById("#password");
+var pass = "";
 
 function generatePassword() {
   // var passwordAlert = window.alert("Password requires " + (parameters))
-  for (var i = 0; i => 8; ++i) {
-    var randomNumber = Math.floor(Math.random() * chars.length);
-    pass += chars.randomNumber;
+  for (var i = 8; i <=128; i++) {
+    pass += chars.substring(Math.floor(Math.random() * chars.length));
   }
-  return
+  return pass;
 }
 
 // Get references to the #generate element
