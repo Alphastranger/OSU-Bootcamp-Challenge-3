@@ -6,10 +6,19 @@ var pass=document.getElementById("#password");
 var pass = "";
 
 function generatePassword() {
-  // var passwordAlert = window.alert("Password requires " + (parameters))
-  for (var i = 8; i <=128; i++) {
-    pass += chars.substring(Math.floor(Math.random() * chars.length));
+  var passwordAlert = window.alert("Password requires " + (parameters))
+  var passwordLength = window.prompt("Input password length between 8 and 128")
+  if (passwordLength < 8 || passwordLength >128) {
+    window.alert("Please input a proper length");
   }
+  else {
+    pass += chars.substring(Math.floor(Math.random() * passwordLength));
+    }
+
+  // for (var i = 8; i <=128; i++) {
+  //   pass += chars.substring(Math.floor(Math.random() * pass.length));
+  // }
+  
   return pass;
 }
 
