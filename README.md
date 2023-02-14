@@ -14,4 +14,4 @@ The JavaScript challenge for the OSU Bootcamp
 
 Screenshot: ![alt text](./images/Screenshot.png)
 
-Webpage URL:
+Webpage URL:https://alphastranger.github.io/OSU-Bootcamp-Challenge-3/
