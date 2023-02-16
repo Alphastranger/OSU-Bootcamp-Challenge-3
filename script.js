@@ -11,9 +11,11 @@ specialChars: ["!",'@','#','$','%','^','&','*'],
 let chars = "";
 var passEl = document.getElementById("#password");
 let arr = []
+let length;
 function generatePassword() {
   var passwordAlert = window.alert("Password requires capital, lowercase, numeric, and special character")
   var passwordLength = window.prompt("Input password length between 8 and 128")
+  length = passwordLength
   console.log(passwordLength)
   if (confirm("Do you want numbers in your password?") == true) {
     chars += parameters.numbers;
@@ -58,8 +60,13 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+  let output = []
+  for(let i = 0; i < length; i++)
+  {
+    output.push(chars[Math.floor(Math.random() * chars.length)])
+  }
+  output = output.join('')
+  passwordText.textContent = output;
   
 }
 
