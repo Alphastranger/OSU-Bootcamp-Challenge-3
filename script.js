@@ -20,7 +20,9 @@ function generatePassword() {
     chars += parameters.numbers;
     console.log(chars)
   }
-
+  if (passwordLength < 8 || passwordLength > 128) {
+    window.alert("Please input a proper length");
+  }
   if (confirm("Do you want capitals in your password?") == true) {
     chars += parameters.capitals;
     console.log(chars)
@@ -36,39 +38,19 @@ function generatePassword() {
     console.log(chars)
   }
 
-  if (passwordLength < 8 || passwordLength > 128) {
-    window.alert("Please input a proper length");
-  }
   const charsFinal = chars.split('')
   console.log(charsFinal)
   console.log(charsFinal.length)
-        for (i=0; i<passwordLength; i++)
-        {let passLength = Math.floor(Math.random() * charsFinal.length);
-        console.log(passLength) 
-        const finalThing = arr.push(charsFinal[passLength])
-        console.log(arr)
-        
-      }
-        passEl.value = arr.join('')
-        console.log(passEl.value)
-        return passEl.value;
-        //;
-        // console.log(finalThing)  
-        
-      // }
-      // while (i<=passwordLength);
-      
-    
-    
-    
-    // arr.push([Math.floor(Math.random() * passwordLength)])
+  for (i = 0; i < passwordLength; i++) {
+    let passLength = Math.floor(Math.random() * charsFinal.length);
+    console.log(passLength)
+    const finalThing = arr.push(charsFinal[passLength])
+    console.log(arr)
 
-  
-  // for (var i =passwordLength; i++;) {
-  //   pass += parameters.charAt(Math.floor(Math.random() * passwordLength));
-  // }
-
-  
+  }
+  passEl.value = arr.join('')
+  console.log(passEl.value)
+  return passEl.value;
 }
 
 // Get references to the #generate element
@@ -78,12 +60,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  // let output = []
-  // for(let i = 0; i < length; i++)
-  // {
-  //   output.push(chars[Math.floor(Math.random() * chars.length)])
-  // }
-  // output = output.join('')
   passwordText.value = password;
 
 }
